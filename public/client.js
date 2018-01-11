@@ -14,7 +14,9 @@ player.autostart = true;
 player.loop = true;
 
 //var socket = new WebSocket('ws://localhost:8081/');
-var socket = new WebSocket(HOST);
+//var socket = new WebSocket(HOST);
+var socket = new WebSocket("wss://" + server);
+
 console.log(HOST);
 
 socket.onopen = function(event) {
