@@ -54,6 +54,8 @@ var modulation = function(text){
     
     document.getElementById('modulation').innerHTML = modulateServerStream.message;
     document.getElementById('numClients').innerHTML = modulateServerStream.numClients;
+    
+    console.log(text);
 }
 
 window.addEventListener('beforeunload', function() {
