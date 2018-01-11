@@ -1,6 +1,6 @@
 
 //const PORT = process.env.PORT || 8080
-const HOST = location.origin.replace(/^https/, 'ws')
+const HOST = location.origin.replace(/^https/, 'wss')
 
 var feedbackDelayObj = new Tone.PingPongDelay({
   "delayTime" : "0.1",
@@ -14,8 +14,8 @@ player.autostart = true;
 player.loop = true;
 
 //var socket = new WebSocket('ws://localhost:8081/');
-//var socket = new WebSocket(HOST);
-var socket = new WebSocket("wss://" + server);
+var socket = new WebSocket(HOST);
+//var socket = new WebSocket("wss://" + server);
 
 console.log(HOST);
 
