@@ -6,12 +6,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markbrown4/websockets.git"
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/markbrown4/websockets/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/markbrown4/websockets#readme",
+  "homepage": "",
   "description": "",
   "dependencies": {
     "express": "^4.13.4",
