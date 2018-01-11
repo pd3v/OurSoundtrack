@@ -1,6 +1,6 @@
 
 //const PORT = process.env.PORT || 8080
-const HOST = location.origin.replace(/^http/, 'ws')
+const HOST = location.origin.replace(/^https/, 'ws')
 
 var feedbackDelayObj = new Tone.PingPongDelay({
   "delayTime" : "0.1",
