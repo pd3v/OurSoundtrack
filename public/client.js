@@ -1,3 +1,7 @@
+
+//const PORT = process.env.PORT || 8080
+const HOST = location.origin.replace(/^http/, 'ws')
+
 var feedbackDelayObj = new Tone.PingPongDelay({
   "delayTime" : "0.1",
   "feedback" : 0.25,
@@ -9,7 +13,10 @@ var player = new Tone.Player("egtr.wav").connect(feedbackDelayObj);
 player.autostart = true;
 player.loop = true;
 
-var socket = new WebSocket('ws://localhost:8081/');
+//var socket = new WebSocket('ws://localhost:8081/');
+var socket = new WebSocket(HOST);
+console.log(HOST);
+
 socket.onopen = function(event) {
   //log('Opened connection 🎉');
   var json = JSON.stringify({ message: 'Hello' });
