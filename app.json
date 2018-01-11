@@ -1,0 +1,8 @@
+{
+	“name”: “Our soundtrack”,
+	“description”: “music from all to all”,
+	“repository”: “”,
+	“logo”: “”,
+	“keyword”: [“node”, “websockets”],
+	“image”: “heroku/nodejs”
+}
