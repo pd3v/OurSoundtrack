@@ -4,14 +4,44 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
-      td { vertical-align: top }
+      body{ 
+        background-color: #444444;
+        color: yellow;
+        font-family: "Menlo", Arial ,sans-serif;
+      }
+      td{vertical-align: top}
+      b{color: red}
+      h1{width: 100%}
+      .content{
+        width: 100%
+        align-content: center;
+        text-align: center;
+        margin: 40px;
+        
+      }
+      .innards{
+        width: 100%;
+        text-align: center;
+      }
+      #numClients, #numClientsImg{
+        font-size: 30px;
+        font-style: bold;
+      }
     </style>
+    <script src="Tone.js"></script>
   </head>
   <body>
-    <p>
+    <p hidden="">
       <button id="send">Send Message</button>
       <button id="close">Close</button>
     </p>
+    <div class="content">
+      <h1>OUR SOUNDTRACK</h1>
+      <h3 class='innards'>Expression</h3>
+      <div class= 'innards' id='modulation'>expression</div>
+      <div class='innards' id='numClientsImg'><img src='people.png' width='25%'></div>
+      <div class='innards' id='numClients'>us</div>
+    </div>  
     <ul id="log"></ul>
     <script src="client.js"></script>
   </body>
