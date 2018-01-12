@@ -12,7 +12,7 @@ var feedbackDelayObj = new Tone.PingPongDelay({
   "wet" : 0.25
 }).toMaster();
 
-var player = new Tone.Player("egtr.wav").connect(feedbackDelayObj);
+var player = new Tone.Player("porto1_loop2_comsons.wav").connect(feedbackDelayObj);
 //var player = new Tone.Player("https://soundcloud.com/user-934391296/soundtrack1_loop-1").connect(feedbackDelayObj);
 
 player.autostart = true;
@@ -73,7 +73,7 @@ window.addEventListener('beforeunload', function() {
 });
 
 
-function handleOrientation(event) {
+/*function handleOrientation(event) {
   var absolute = event.absolute;
   var alpha    = event.alpha;
   var beta     = event.beta;
@@ -86,4 +86,4 @@ function handleOrientation(event) {
   socket.send(json);
 }
 
-setInterval(handleOrientation, 3000);
+setInterval(handleOrientation, 3000);*/
