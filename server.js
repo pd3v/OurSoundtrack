@@ -3,15 +3,18 @@ var http = require('http');
 var express = require('express');
 var WSS = require('ws').Server;
 const PORT = process.env.PORT || 8080
+
 var app = express().use(express.static('public'));
 var server = http.createServer(app);
 
-server.listen(PORT, function(){
-  
+server.listen(PORT, function(){  
   var fxParam = 0.33;
   var numClients = 0;
 
-  var wss = new WSS({ port: 8081 });
+  //var wss = new WSS({ port: 8081 });
+  var wss = new WSS({server});
+  //var wss = new WSS({ port: PORT });
+  //console.log(PORT);
   wss.on('connection', function(socket) {
     //console.log('Opened Connection 🎉');
 
