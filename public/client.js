@@ -79,7 +79,7 @@ function handleOrientation(event) {
   var beta     = event.beta;
   var gamma    = event.gamma;
 
-  document.getElementById('orientation').innerHTML = absolute;
+  document.getElementById('gyro').innerHTML = absolute;
   // Do stuff with the new orientation data
   console.log(absolute, apha, beta, gamma);
 }
