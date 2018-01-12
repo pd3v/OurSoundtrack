@@ -1,11 +1,9 @@
 
-//const PORT = process.env.PORT || 8080
 const HOST = location.origin.replace(/^http/, 'ws')
 const PORT = parseInt(location.port) + 1;
 
-console.log("HOST:" + HOST + " PORT:" +  PORT);
-console.log(HOST.replace('8080', PORT)); 
-//, HOST.replace('8080', PORT));
+//console.log("HOST:" + HOST + " PORT:" +  PORT);
+//console.log(HOST.replace('8080', PORT)); 
 
 var feedbackDelayObj = new Tone.PingPongDelay({
   "delayTime" : "0.1",
@@ -19,9 +17,7 @@ player.autostart = true;
 player.loop = true;
 
 //var socket = new WebSocket('ws://localhost:8081/');
-//var socket = new WebSocket('ws://localhost:'+ PORT +'/');
 var socket = new WebSocket(HOST);
-//var socket = new WebSocket("wss://" + server);
 
 socket.onopen = function(event) {
   //log('Opened connection 🎉');
@@ -67,8 +63,7 @@ var modulation = function(text){
     
     document.getElementById('modulation').innerHTML = modulateServerStream.message;
     document.getElementById('numClients').innerHTML = modulateServerStream.numClients;
-    
-    console.log(text);
+    //console.log(text);
 }
 
 window.addEventListener('beforeunload', function() {
