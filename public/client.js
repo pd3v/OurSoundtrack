@@ -4,6 +4,7 @@ const PORT = parseInt(location.port) + 1;
 
 //console.log("HOST:" + HOST + " PORT:" +  PORT);
 //console.log(HOST.replace('8080', PORT)); 
+window.addEventListener("deviceorientation", handleOrientation, true);
 
 var feedbackDelayObj = new Tone.PingPongDelay({
   "delayTime" : "0.1",
@@ -12,6 +13,7 @@ var feedbackDelayObj = new Tone.PingPongDelay({
 }).toMaster();
 
 var player = new Tone.Player("egtr.wav").connect(feedbackDelayObj);
+//var player = new Tone.Player("https://soundcloud.com/user-934391296/soundtrack1_loop-1").connect(feedbackDelayObj);
 
 player.autostart = true;
 player.loop = true;
@@ -69,3 +71,14 @@ var modulation = function(text){
 window.addEventListener('beforeunload', function() {
   socket.close();
 });
+
+
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha    = event.alpha;
+  var beta     = event.beta;
+  var gamma    = event.gamma;
+
+  // Do stuff with the new orientation data
+  console.log(absolute, apha, beta, gamma);
+}
