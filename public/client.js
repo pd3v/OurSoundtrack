@@ -4,7 +4,7 @@ const PORT = parseInt(location.port) + 1;
 
 //console.log("HOST:" + HOST + " PORT:" +  PORT);
 //console.log(HOST.replace('8080', PORT)); 
-window.addEventListener("deviceorientation", handleOrientation, true);
+//window.addEventListener("deviceorientation", handleOrientation, true);
 
 var feedbackDelayObj = new Tone.PingPongDelay({
   "delayTime" : "0.1",
@@ -79,7 +79,11 @@ function handleOrientation(event) {
   var beta     = event.beta;
   var gamma    = event.gamma;
 
-  document.getElementById('gyro').innerHTML = beta;
+  //document.getElementById('gyro').innerHTML = beta;
   // Do stuff with the new orientation data
-  console.log(absolute, apha, beta, gamma);
+  //console.log(absolute, apha, beta, gamma);
+  var json = JSON.stringify({ alpha: event.alpha });
+  socket.send(json);
 }
+
+setInterval(handleOrientation, 3000);
