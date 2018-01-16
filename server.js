@@ -40,6 +40,7 @@ server.listen(PORT, function(){
 
     socket.on('close', function() {
       //console.log('Closed Connection 😱');
+      numClients = wss.clients.length;
     });
   });
 
